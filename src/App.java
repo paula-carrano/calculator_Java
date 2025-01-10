@@ -2,6 +2,7 @@ package src;
 
 import java.util.Scanner;
 import src.operaciones.*;
+import src.utils.Colores;
 
 public class App {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class App {
         System.out.println("Introducí el primer número");
         double number1 = scanner.nextDouble();
 
-        System.out.println("Introducí el operador [+, -, * , /]:");
+        System.out.println("Introducí el operador + Colores.Azul + [+, -, * , /]:");
         char operador = scanner.next().charAt(0);
 
         System.out.println("Introducí el segundo número");
@@ -32,15 +33,15 @@ public class App {
                 calculadora.setOperacion(new Division());
                 break;
             default:
-                System.out.println("Operador no válido.");
+                System.out.println(Colores.ROJO + "Operador no válido.");
                 scanner.close();
                 return;
         }
         try {
             double resultado = calculadora.ejecutarOperacion(number1, number2);
-            System.out.println("El resultado es: " + resultado);
+            System.out.println("El resultado es: " + Colores.AZUL + resultado);
         } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println(Colores.ROJO + "Error: " + e.getMessage());
         }
 
         scanner.close();
