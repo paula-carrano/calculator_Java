@@ -13,7 +13,7 @@ public class App {
         System.out.println("Introducí el primer número");
         double number1 = scanner.nextDouble();
 
-        System.out.println("Introducí el operador + Colores.Azul + [+, -, * , /]:");
+        System.out.println("Introducí el operador [+, -, * , /]:");
         char operador = scanner.next().charAt(0);
 
         System.out.println("Introducí el segundo número");
